@@ -4,5 +4,5 @@ app = FastAPI()
 
 
 @app.get("/")
-def hello():
+def test():
     return {"message": "Test AlgoBalanz"}
