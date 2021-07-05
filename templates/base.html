@@ -9,7 +9,7 @@
     <meta name="description" content="FastAPI Starter">
     <meta name="author" content="Shinichi Okada">
 
-    <title>{% block title %}{% endblock %} FastAPI Starter</title>
+    <title>{% block title %}{% endblock %}</title>
     <link rel="icon" href="{{ url_for('static', path='/images/favicon.png') }}" sizes="32x32" />
 
     <!-- Bootstrap CSS CDN -->
@@ -26,10 +26,8 @@
 
 <body>
     <div class="wrapper">
-        {% include 'include/sidebar.html' %}
         <!-- Page Content  -->
         <div id="content">
-            {% include 'include/topnav.html' %}
             {% block page_content %}
             {% endblock %}
         </div>
