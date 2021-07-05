@@ -52,7 +52,7 @@ async def home(request: Request):
 @app.websocket("/ws/{client}")
 async def websocket_endpoint(websocket: WebSocket, client: str):
     await settings.manager.connect(websocket)
-    await settings.manager.broadcast("USER_JOIN", f"Client {client} joined.")
+    # await settings.manager.broadcast("USER_JOIN", f"Client {client} joined.")
     try:
         while True:
             data = await websocket.receive_text()
@@ -61,7 +61,7 @@ async def websocket_endpoint(websocket: WebSocket, client: str):
             except:
                 message = data
 
-            await settings.manager.broadcast("BROADCAST_MESSAGE", message)
+            # await settings.manager.broadcast("BROADCAST_MESSAGE", message)
     except WebSocketDisconnect:
         settings.manager.disconnect(websocket)
         await settings.manager.broadcast(
